@@ -1,0 +1,1 @@
+from wineQuality.entity.config_enity import *
