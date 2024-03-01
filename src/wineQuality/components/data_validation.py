@@ -11,7 +11,7 @@ class DataValidation:
     def validate_columns(self) -> bool:
         try:
             validation_status = None
-            data = pd.read_csv(self.config.unzip_data_dir,index_col='Id')
+            data = pd.read_csv(self.config.unzip_data_dir)
             all_cols = list(data.columns)
             
             all_schema = self.config.all_schemas.keys()
