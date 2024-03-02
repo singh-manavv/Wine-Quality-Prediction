@@ -2,7 +2,8 @@ from wineQuality import logger
 from wineQuality.pipeline import (  DataIngestionTrainPipeline, 
                                     DataValidationTrainPipeline, 
                                     DataTransformationTrainPipeline,
-                                    ModelTrainingPipeline)
+                                    ModelTrainingPipeline,
+                                    ModelEvaluationPipeline)
 
 
 STAGE_NAME = 'Data Ingestion'
@@ -40,6 +41,16 @@ STAGE_NAME = 'Model Training'
 try:
     logger.info(f'>>>>> {STAGE_NAME} stage started<<<<<')
     obj = ModelTrainingPipeline()
+    obj.main()
+    logger.info(f'>>>>> {STAGE_NAME} stage finished<<<<<\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = 'Model Evaluation'
+try:
+    logger.info(f'>>>>> {STAGE_NAME} stage started<<<<<')
+    obj = ModelEvaluationPipeline()
     obj.main()
     logger.info(f'>>>>> {STAGE_NAME} stage finished<<<<<\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 except Exception as e:

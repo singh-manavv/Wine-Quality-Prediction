@@ -1,3 +1,9 @@
 ElasticNet:
   alpha: 0.2
   l1_ratio: 0.1
+
+LinearRegression:
+
+RandomForestRegressor:
+  n_estimators: 1000
+  max_features: sqrt

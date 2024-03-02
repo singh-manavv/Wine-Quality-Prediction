@@ -2,7 +2,8 @@ import os
 import pandas as pd
 import joblib 
 from wineQuality import logger
-from sklearn.linear_model import ElasticNet
+from sklearn.linear_model import ElasticNet, LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from wineQuality.entity import ModelTrainerConfig
 
 
@@ -19,7 +20,8 @@ class ModelTrainer:
         y_train =  train_data[[self.config.target_column]]
         y_test = test_data[[self.config.target_column]]
         
-        lr = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
+        lr= RandomForestRegressor(n_estimators=self.config.n_estimators, max_features=self.config.max_features, random_state=42)
+        # lr = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
         lr.fit(X_train, y_train)
         
         joblib.dump(lr, os.path.join(self.config.root_dir, self.config.model_name))
