@@ -1,0 +1,135 @@
+body {
+    background-image: url('../images/redwine.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8; /* Adjust this value to change the opacity */
+    z-index: -1;
+}
+
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #b84268;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #b84268
+}
+
+h3 {
+    
+    color: #b84268;
+    padding: 15px;
+    background-color: #dddddd;
+    border-radius: 2px;
+}
+
+p{
+    margin-bottom: 30px;
+    padding: 15px;
+}
+.prediction-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 0px;
+    font-family: Arial;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f3f3f3;
+}
+
+.form-group input,
+.form-group select {
+    margin: auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 26px;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.btn-submit {
+    border: none;
+    /* margin-left: auto; */
+    /* margin-top: auto; */
+    margin: auto;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 29px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 140px;
+    height: 38px;
+    font-size: 0.85em;
+}
+
+.prediction-result {
+    align-items: center;
+    background-color: #030303;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.prediction-text {
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+footer {
+    display: grid;
+    font-family: sans-serif;
+    color: #ffffff;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 0.85em;
+    border-top: 3px solid #b84268;
+}
+
+@media (max-width: 768px) {
+    .prediction-result {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .prediction-text {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}

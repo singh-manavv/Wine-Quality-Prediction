@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1>Wine Quality Prediction</h1>
+		<form action="/predict" method="post" class="prediction-form">
+			<div class="form-group">
+				<label for="fixed-acidity">Fixed Acidity</label>
+				<input type="number"  name="fixed-acidity" id="fixed-acidity" step="0.01" required placeholder="Enter Fixed Acidity">
+			</div>
+			<div class="form-group">
+				<label for="volatile-acidity">Volatile Acidity</label>
+				<input type="number"  name="volatile-acidity" id="volatile-acidity" step="0.01" required placeholder="Enter Volatile Acidity">
+			</div>
+			<div class="form-group">
+				<label for="citric-acid">Citric Acid</label>
+				<input type="number"   name="citric-acid" id="citric-acid" step="0.01" required placeholder="Enter Citric Acid">
+			</div>
+			<div class="form-group">
+				<label for="residual-sugar">Residual Sugar</label>
+				<input type="number"  name="residual-sugar" id="residual-sugar" step="0.01" required placeholder="Enter Residual Sugar">
+			</div>
+			<div class="form-group">
+				<label for="chlorides">Chlorides</label>
+				<input type="number"  name="chlorides" id="chlorides" step="0.01" required placeholder="Enter Chlorides">
+			</div>
+			<div class="form-group">
+				<label for="free-sulfur-dioxide">Free Sulfur Dioxide</label>
+				<input type="number"  name="free-sulfur-dioxide" id="free-sulfur-dioxide" step="0.01" required placeholder="Enter Free Sulfur Dioxide">
+			</div>
+			<div class="form-group">
+				<label for="total-sulfur-dioxide">Total Sulfur Dioxide</label>
+				<input type="number"  name="total-sulfur-dioxide" id="total-sulfur-dioxide" step="0.01" required placeholder="Enter Total Sulfur Dioxide">
+			</div>
+			<div class="form-group">
+				<label for="density">Density</label>
+				<input type="number"  name="density" id="density" step="0.01" required placeholder="Enter Density">
+			</div>
+			<div class="form-group">
+				<label for="pH">pH</label>
+				<input type="number"  name="pH" id="pH" step="0.01" required placeholder="Enter pH">
+			</div>
+			<div class="form-group">
+				<label for="sulphates">Sulphates</label>
+				<input type="number" name="sulphates" id="sulphates" step="0.01" required placeholder="Enter Sulphates">
+			</div>
+			<div class="form-group">
+				<label for="alcohol">Alcohol</label>
+				<input type="number" name="alcohol" id="alcohol" step="0.01" required placeholder="Enter Alcohol">
+			</div>
+			<button type="submit" class="btn btn-submit mt-20">Predict</button>
+		</form>
+		
+		<footer>
+			
+			{% if prediction_text %}
+			<h3>Quality of the wine is : {{ prediction_text }}</h3>
+			{% endif %}
+			<p>Made by: Manvendra Singh</p>
+		</footer>
+	</div>
+
+</body>
+</html>
