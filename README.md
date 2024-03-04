@@ -43,6 +43,10 @@ docker build -t yourname/wine-quality-prediction .
 ```bash
 docker run -d -p 8080:8080 yourname/wine-quality-prediction
 ```
+
+## Preview
+![Preview](Previews/winequality.gif)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
