@@ -1,4 +1,4 @@
-FROM python:3.11.7-alpine3.19
+FROM python:3.11.7-slim-bullseye
 
 RUN apt update -y && apt install awscli -y
 WORKDIR /app 
